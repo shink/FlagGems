@@ -63,6 +63,7 @@ class DeviceDetector(object):
             "cambricon": "mlu",
             "mthreads": "musa",
             "iluvatar": "corex",
+            "ascend": "npu",
         }
         for vendor_name, flag in cmd.items():
             if hasattr(torch, flag):
