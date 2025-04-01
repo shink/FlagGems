@@ -24,3 +24,5 @@ build/
 # information for Eclipse / Flash Builder.
 
 tests/result.json
+result.json
+fusion_result.json

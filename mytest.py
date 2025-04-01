@@ -54,9 +54,9 @@ def reduce_sum(use_gems=False):
 @timer(1000)
 def fa_scaled_dot_product_attention(use_gems=False):
     query, key, value = (
-        torch.randn(2, 4, 1024, 64, device="cuda"),
-        torch.randn(2, 4, 1024, 64, device="cuda"),
-        torch.randn(2, 4, 1024, 64, device="cuda"),
+        torch.randn(2, 4, 1024, 64, device=flag_gems.device),
+        torch.randn(2, 4, 1024, 64, device=flag_gems.device),
+        torch.randn(2, 4, 1024, 64, device=flag_gems.device),
     )
     if use_gems:
         with flag_gems.use_gems():
@@ -74,6 +74,8 @@ def fa_scaled_dot_product_attention(use_gems=False):
 
 
 if __name__ == "__main__":
+    print(f"Runs on: {flag_gems.device}")
+
     pointwise_add()
     pointwise_add(use_gems=True)
 
